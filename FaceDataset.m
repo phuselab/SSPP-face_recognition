@@ -5,7 +5,6 @@ classdef FaceDataset < handle
     properties %(SetAccess = protected)
         info          % face dataset info (FaceDatasetInfo type)
         gallery       % gallery of training images (Gallery type)
-        galleryStacked %gallery with stacked feats on a subset of IDs
         num_test      % number of test images
         num_val
         test_db       % test dataset of features
@@ -14,12 +13,9 @@ classdef FaceDataset < handle
         val_ID
         K = 1         % num training images x subject
         num_feats     % overall num. of features
-        stack         % flag indicating whether to stack or not the features
         idx_train_test
         idxABS
         TestAugSplit
-        testStacked
-        testIDstacked
     end
     
     methods
